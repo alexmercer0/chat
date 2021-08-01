@@ -13,10 +13,10 @@
 let btn =document.querySelector("#button")
 const q=document.getElementById("search")
 const name=localStorage.getItem("name")
-if(name) 
+if(name) {
 document.querySelector("iframe").src="https://cht.xxx/affiliates/in/?tour=9oGW&campaign=nna9W&track=TFC_livechatroom&room="+name+"&disable_sound=0&embed_video_only=0"
-
-
+q.placeholder=name
+}
 
 btn.addEventListener("click",(e)=>{
   e.preventDefault()
