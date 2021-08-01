@@ -11,14 +11,16 @@
 <iframe src="https://cht.xxx/affiliates/in/?tour=9oGW&campaign=nna9W&track=TFC_livechatroom&room=allisonpalmer&disable_sound=0&embed_video_only=0" height=600 width=1000></iframe>
 <script type="text/javascript">
 let btn =document.querySelector("#button")
-let q=document.getElementById("search")
+const q=document.getElementById("search")
 
-btn.addEventListener("click",()=>{
+btn.addEventListener("click",(e)=>{
+  e.preventDefault()
 document.querySelector("iframe").src="https://cht.xxx/affiliates/in/?tour=9oGW&campaign=nna9W&track=TFC_livechatroom&room="+q.value.trim().toLowerCase()+"&disable_sound=0&embed_video_only=0"
-q.setAttribute("value","")
-q.setAttribute("placeholder",q.value.trim().toLowerCase())
-alert(document.getElementById("search"))
+q.placeholder=q.value.trim().toLowerCase()
+q.value=""
+q.blur()
 })
+
 
 </script>
   </body>
