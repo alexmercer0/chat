@@ -7,18 +7,28 @@
   </head>
   <body>
 <form action="#">
-<input type="text" id="search" /><button type="submit" id="button">search</button></form>
+<input type="text" id="search" placeholder="allisonpalmer"/><button type="submit" id="button">search</button></form>
 <iframe src="https://cht.xxx/affiliates/in/?tour=9oGW&campaign=nna9W&track=TFC_livechatroom&room=allisonpalmer&disable_sound=0&embed_video_only=0" height=600 width=1000></iframe>
 <script type="text/javascript">
 let btn =document.querySelector("#button")
 const q=document.getElementById("search")
+const name=localStorage.getItem("name")
+if(name) 
+document.querySelector("iframe").src="https://cht.xxx/affiliates/in/?tour=9oGW&campaign=nna9W&track=TFC_livechatroom&room="+name+"&disable_sound=0&embed_video_only=0"
+
+
 
 btn.addEventListener("click",(e)=>{
   e.preventDefault()
-document.querySelector("iframe").src="https://cht.xxx/affiliates/in/?tour=9oGW&campaign=nna9W&track=TFC_livechatroom&room="+q.value.trim().toLowerCase()+"&disable_sound=0&embed_video_only=0"
+let value=q.value.trim().toLowerCase()
+if(!value)
+value=q.placeholder
+document.querySelector("iframe").src="https://cht.xxx/affiliates/in/?tour=9oGW&campaign=nna9W&track=TFC_livechatroom&room="+value+"&disable_sound=0&embed_video_only=0"
 q.placeholder=q.value.trim().toLowerCase()
+localStorage.setItem("name",q.placeholder)
 q.value=""
 q.blur()
+
 })
 
 
