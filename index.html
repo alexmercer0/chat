@@ -9,14 +9,16 @@
 <form>
 <input type="text" id="search" placeholder="allisonpalmer"/><button type="submit" id="button">search</button></form>
 <iframe src="https://www.cht.xxx/embed/magic_elf/?join_overlay=1&campaign=nna9W&embed_video_only=0&disable_sound=0&tour=9oGW&room=allisonpalmer" height=600 width=1000></iframe>
-<script type="text/javascript" defer>
+<script type="text/javascript">
 
-window.onload = () => {
+window.addEventListener('DOMContentLoaded', () => {
 const url = new Url(window.location.href)
 const params = new URLSearchParams(url.search)
 console.log(params)
 document.querySelector("iframe").src = "https://www.cht.xxx/embed/" + params.get('room') +"/?join_overlay=1&campaign=nna9W&embed_video_only=0&disable_sound=0&tour=9oGW&room=allisonpalmer"
-}
+
+}); 
+
 
 let btn =document.querySelector("#button")
 const q=document.getElementById("search")
@@ -24,7 +26,6 @@ const q=document.getElementById("search")
 btn.addEventListener("click",(e)=>{
   e.preventDefault()
 let value=q.value.trim().toLowerCase()
-console.log(value)
 window.location.href = "https://alexmercer0.github.io/chat/?room=" + value
 })
 
