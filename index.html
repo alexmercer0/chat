@@ -9,26 +9,21 @@
 <form action="#">
 <input type="text" id="search" placeholder="allisonpalmer"/><button type="submit" id="button">search</button></form>
 <iframe src="https://cht.xxx/affiliates/in/?tour=9oGW&campaign=nna9W&track=TFC_livechatroom&room=allisonpalmer&disable_sound=0&embed_video_only=0" height=600 width=1000></iframe>
-<script type="text/javascript">
+<script type="text/javascript" defer>
+
+() => {
+const url = new Url(window.location.href)
+const { room } = new URLSearchParams(url.search)
+document.querySelector("iframe").src = "https://www.cht.xxx/embed/" + room +"/?join_overlay=1&campaign=nna9W&embed_video_only=0&disable_sound=0&tour=9oGW&room=allisonpalmer"
+}()
+
 let btn =document.querySelector("#button")
 const q=document.getElementById("search")
-const name=localStorage.getItem("name")
-if(name) {
-document.querySelector("iframe").src="https://cht.xxx/affiliates/in/?tour=9oGW&campaign=nna9W&track=TFC_livechatroom&room="+name+"&disable_sound=0&embed_video_only=0"
-q.placeholder=name
-}
 
 btn.addEventListener("click",(e)=>{
   e.preventDefault()
 let value=q.value.trim().toLowerCase()
-if(!value)
-value=q.placeholder
-document.querySelector("iframe").src="https://cht.xxx/affiliates/in/?tour=9oGW&campaign=nna9W&track=TFC_livechatroom&room="+value+"&disable_sound=0&embed_video_only=0"
-q.placeholder=value
-localStorage.setItem("name",value)
-q.value=""
-q.blur()
-
+window.location.replace("https://alexmercer0.github.io/chat?room=" + value)
 })
 
 
